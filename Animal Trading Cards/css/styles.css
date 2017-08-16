@@ -6,24 +6,30 @@
     padding: 0 10px 10px 10px;
     box-shadow: 5px 5px 1px #ebebe0;
 }
+
 img {
     width: 300px;
 }
+
 .contents {
     box-sizing: border-box;
     border: 1px solid #e1e1d0;
     margin-top: 10px;
-    padding: 0 10px 0 10px;
+    padding: 0 10px;
 }
+
 .fact {
     font-style: italic;
 }
+
 ul {
     padding: 0;
 }
+
 li {
     list-style: none;
 }
+
 .label {
     font-weight: bold;
 }
