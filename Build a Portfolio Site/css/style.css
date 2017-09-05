@@ -1,10 +1,11 @@
 .container {
     width: 900px;
     margin: 2em auto;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Voltaire', sans-serif;
 }
 
-
+/*#EF9D54 5A9A70
+F0C15D 87A644 E86946*/
 .row {
     margin: 1em auto;
     display: flex;
@@ -14,21 +15,26 @@
     height: 100px;
     item-align: center;
 }
+.header .logo #logo {
+    width: 100px;
+}
 
 .header .intro {
     text-align: right;
 }
-.header .intro h1, h4 {
-    margin: 0;
-}
 .header .intro h1 {
+    margin: 0;
     font-size: 3em;
+    color: #5A9A70;
+}
+.header .intro h3 {
+    color: #5A9A70;
 }
 .main {
     margin-top: 2em;
 }
 .border{
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #EF9D54;
     margin-bottom: 2em;
 }
 .main img{
@@ -38,6 +44,14 @@
 
 .contents .item {
     text-align: center;
+}
+.contents .item a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer #social a {
+    text-decoration: none;
 }
 
 
