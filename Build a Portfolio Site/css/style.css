@@ -14,10 +14,13 @@ F0C15D 87A644 E86946*/
 .header {
     height: 100px;
     item-align: center;
+    margin-top: 3em;
 }
+
 .header .logo #logo {
     width: 100px;
 }
+
 
 .header .intro {
     text-align: right;
@@ -30,12 +33,21 @@ F0C15D 87A644 E86946*/
 .header .intro h3 {
     color: #5A9A70;
 }
+section {
+    color: #26402f;
+}
 .main {
     margin-top: 2em;
 }
 .border{
     border-bottom: 2px solid #EF9D54;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
+}
+.paragraph {
+    margin: 0 0.8em 2.6em 0.8em;
+}
+.paragraph h2 {
+    text-align: center;
 }
 .main img{
     margin-left: auto;
@@ -45,15 +57,48 @@ F0C15D 87A644 E86946*/
 .contents .item {
     text-align: center;
 }
+.contents .items .gallery {
+    margin-left: auto;
+    margin-right: auto;
+    width: 240px;
+}
+.contents .item h4 {
+
+}
 .contents .item a {
     text-decoration: none;
-    color: black;
+    border-bottom: 1.5px dotted #EF9D54;
+    color: #26402f;
 }
-
-.footer #social a {
+.contents .item h5 {
+    text-align: left;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+footer {
+    text-align: center;
+    margin-top: 3em;
+}
+footer #social ul.icons {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+footer #social ul.icons li {
+    display: inline-block;
+    font-size: 1.5em;
+    width: 3em;
+    height: 3em;
+    justify-content: center;
+    align-items: center;
+}
+footer #social ul.icons li .label {
+    display: none;
+}
+footer #social ul.icons li a {
+    color: #5A9A70;
     text-decoration: none;
 }
-
 
 .col-1 {    width: 8.33%;
 }
