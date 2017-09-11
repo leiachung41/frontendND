@@ -8,18 +8,13 @@ module.exports = function(grunt) {
 					sizes: [{
 						name: 'small',
 						width: '30%',
-						suffix: '_small',
 						quality: 20
 					}, {
-						name: 'large',
-						width: '50%',
-						suffix: '_large',
+						name: 'medium',
+						width: '60%',
 						quality: 40
 					}, {
-						width: 1600,
-						suffix: '_large_2x',
-						quality: 30
-					}, {
+						name: '800',
 						width: 800,
 						suffix: '_large_1x',
 						quality: 50
@@ -28,8 +23,8 @@ module.exports = function(grunt) {
 					files: [{
 						expand: true,
 						src: ['*.{gif,jpg,png,JPG}'],
-						cwd: 'img/',
-						dest: 'img/'
+						cwd: 'img/res_img',
+						dest: 'img/res_img'
 					}]
 				}
 			},

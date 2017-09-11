@@ -4,14 +4,9 @@
     font-family: 'Voltaire', sans-serif;
 }
 
-/*#EF9D54 5A9A70
-F0C15D 87A644 E86946*/
-.row {
+.header {
     margin: 1em auto;
     display: flex;
-}
-
-.header {
     height: 100px;
     item-align: center;
     margin-top: 3em;
@@ -49,11 +44,15 @@ section {
 .paragraph h2 {
     text-align: center;
 }
-.main .image picture img.maing {
-    margin-left: auto;
+.main .banner img {
+    display: flex;
     margin-right: auto;
+    margin-left: auto;
 }
-
+.contents .items {
+    margin: 1em auto;
+    display: flex;
+}
 .contents .item {
     text-align: center;
 }
@@ -61,9 +60,6 @@ section {
     margin-left: auto;
     margin-right: auto;
     width: 240px;
-}
-.contents .item h4 {
-
 }
 .contents .item a {
     text-decoration: none;
