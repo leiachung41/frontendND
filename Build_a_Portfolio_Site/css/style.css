@@ -49,7 +49,7 @@ section {
 .paragraph h2 {
     text-align: center;
 }
-.main img{
+.main .image picture img.maing {
     margin-left: auto;
     margin-right: auto;
 }
