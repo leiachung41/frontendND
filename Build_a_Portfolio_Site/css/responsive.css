@@ -22,12 +22,6 @@
     }
 }
 
-@media screen and (max-width: 700px) {
-    .items .item h5 {
-        display: none;
-    }
-}
-
 @media screen and (max-width: 650px) {
     .container {
         width: 80%;
@@ -55,6 +49,10 @@
         display: block;
         }
     .items .item h4 {
+        width: 100%;
+        text-align: center;
+    }
+    .items .item h5 {
         width: 100%;
         text-align: center;
     }
