@@ -1,9 +1,11 @@
+/* container */
 .container {
     width: 900px;
     margin: 2em auto;
-    font-family: 'Voltaire', sans-serif;
+    font-family: "Voltaire", sans-serif;
 }
 
+/* header */
 .header {
     margin: 1em auto;
     display: flex;
@@ -16,70 +18,91 @@
     width: 100px;
 }
 
-
 .header .intro {
     text-align: right;
 }
+
 .header .intro h1 {
     margin: 0;
     font-size: 3em;
-    color: #5A9A70;
+    color: #5a9a70;
 }
+
 .header .intro h3 {
-    color: #5A9A70;
+    color: #5a9a70;
 }
-section {
+
+/* main, article */
+/* main */
+.main, .article {
     color: #26402f;
 }
+
 .main {
     margin-top: 2em;
 }
+
 .border{
-    border-bottom: 2px solid #EF9D54;
+    border-bottom: 2px solid #ef9d54;
     margin-bottom: 3em;
 }
+
 .paragraph {
     margin: 0 0.8em 2.6em 0.8em;
 }
+
 .paragraph h2 {
     text-align: center;
 }
+
 .main .banner img {
     display: flex;
     margin-right: auto;
     margin-left: auto;
 }
+
+/* article */
 .contents .items {
     margin: 1em auto;
     display: flex;
 }
+
 .contents .item {
     text-align: center;
 }
+
 .contents .items .gallery {
     margin-left: auto;
     margin-right: auto;
-    width: 240px;
+    max-width:100%;
+    height: auto;
+    display:block;
 }
+
 .contents .item a {
     text-decoration: none;
-    border-bottom: 1.5px dotted #EF9D54;
+    border-bottom: 1.5px dotted #ef9d54;
     color: #26402f;
 }
+
 .contents .item h5 {
     text-align: left;
     margin-right: 1em;
     margin-left: 1em;
 }
+
+/* footer */
 footer {
     text-align: center;
     margin-top: 3em;
 }
+
 footer #social ul.icons {
     padding: 0;
     margin-left: auto;
     margin-right: auto;
 }
+
 footer #social ul.icons li {
     display: inline-block;
     font-size: 1.5em;
@@ -88,20 +111,25 @@ footer #social ul.icons li {
     justify-content: center;
     align-items: center;
 }
+
 footer #social ul.icons li .label {
     display: none;
 }
+
 footer #social ul.icons li a {
-    color: #5A9A70;
+    color: #5a9a70;
     text-decoration: none;
 }
+
 footer #social ul.icons li a:hover {
-    border: 1px solid #5A9A70;
+    border: 1px solid #5a9a70;
     border-radius: 100%;
-    background-color: #5A9A70;
-    color: #EF9D54;
+    background-color: #5a9a70;
+    color: #ef9d54;
 }
 
+
+/* col */
 .col-1 {    width: 8.33%;
 }
 .col-2 {    width: 16.66%;

@@ -14,6 +14,10 @@ module.exports = function(grunt) {
 						width: '60%',
 						quality: 40
 					}, {
+						name: 'gallery',
+						width: 240,
+						quality: 50
+					}, {
 						name: '800',
 						width: 800,
 						suffix: '_large_1x',
