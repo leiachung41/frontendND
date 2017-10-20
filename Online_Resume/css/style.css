@@ -36,7 +36,6 @@ h2 {
   font-size: 24px;
   color: #999;
   line-height: 29px;
-  padding: 10px;
 }
 
 h3 {
@@ -60,7 +59,9 @@ h5 {
   padding: 10px 5%;
 
 }
-
+#online {
+    padding: 0;
+}
 
 .date-text {
   font-style: italic;
@@ -80,6 +81,11 @@ h5 {
 
 .description-text {
     font-size: 14px;
+}
+
+.major-text {
+    font-size: 16px;
+    line-height: 16px;
 }
 
 .url-text {

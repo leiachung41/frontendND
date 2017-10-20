@@ -70,6 +70,13 @@ var education = {
             "degree" : "Bachelor of Science",
             "dates" : "Mar 01, 2006 - Feb 22, 2011",
             "major" : "Computer & Information Communication Eng."
+        },
+        {
+            "name" : "King George International College",
+            "location" : "Toronto, ON",
+            "degree" : "Certificate and Diploma",
+            "dates" : "May 2014 - Feb 2015",
+            "major" : "English as a Second Language Program, Interpreting and Translation - Korean"
         }
     ],
     "onlineCourses" : [
@@ -99,6 +106,7 @@ bio.display = function() {
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#topContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedLocation);
+    $("#footerContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedLocation);
 
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedWelcomeMsg);

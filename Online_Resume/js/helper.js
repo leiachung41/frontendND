@@ -23,26 +23,26 @@ var HTMLworkLocation = '<div class="location-text">%data%</div><br>';
 var HTMLworkDescription = '<p class="description-text">&emsp;&emsp;&emsp;%data%</p>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '%data%';
+var HTMLprojectTitle = '<br>%data%';
 var HTMLprojectDates = '<br><div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p class="description-text"><br>&emsp;&emsp;&emsp;%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '%data%';
+var HTMLschoolName = '<br>%data%';
 var HTMLschoolDegree = ' -- %data%';
 var HTMLschoolDates = '<br><div class="date-text">%data%</div>';
-var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em><br>';
+var HTMLschoolLocation = '<div class="location-text">%data%</div><br>';
+var HTMLschoolMajor = '<p class="major-text"><em>%data%</em></p>';
 
-var HTMLonlineClasses = '<br><h3>Online Classes</h3>';
-var HTMLonlineTitle = '%data%';
+var HTMLonlineClasses = '<br><h2 id="online">Online Classes</h2>';
+var HTMLonlineTitle = '<br>%data%';
 var HTMLonlineSchool = ' - %data%';
 var HTMLonlineDates = '<br><div class="date-text">%data%</div>';
 var HTMLonlineURL = '<div class="url-text">%data%</div><br>';
 
 var internationalizeButton = '<button>Internationalize</button>';
-var googleMap = '<div id="map"></div>';
+var googleMap = '<br><div id="map"></div>';
 
 
 $(document).ready(function() {
