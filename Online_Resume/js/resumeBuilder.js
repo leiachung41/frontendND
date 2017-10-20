@@ -1,17 +1,40 @@
 var bio = {
     "name" : "Lea Chung",
     "role" : "Front-End Web Developer",
-    "biopic" : "D:/Udacity/Front End ND/github/frontendND/Online_Resume/img/logo.jpg",
-    "welcomeMessage" : "I'm the one!",
     "contacts" : {
         "mobile" : "416-876-9367",
         "email" : "leachung41@gmail.com",
         "github" : "leachung41",
         "location" : "Toronto, ON"
         },
+        "welcomeMessage" : "I'm the one!",
     "skills" : [
         "detail-oriented", "organized", "responsible"
-    ]
+    ],
+    "biopic" : "D:/Udacity/Front End ND/github/frontendND/Online_Resume/img/logo.jpg"
+};
+
+bio.display = function() {
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+    $("#header").prepend(formattedRole).prepend(formattedName).append(formattedBioPic);
+
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    $("#topContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedLocation);
+    $("#footerContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedLocation);
+
+    var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+    $("#header").append(formattedWelcomeMsg);
+
+    $("#header").append(HTMLskillsStart);
+    for(skill in bio.skills) {
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+        $("#skills").append(formattedSkill);
+    };
 };
 
 var work = {
@@ -49,84 +72,6 @@ var work = {
     ]
 };
 
-var projects = {
-    "projects" : [
-        {
-            "title" : "Build a Portfolio Site",
-            "dates" : "Sep 2017",
-            "description" : "▶ You will be provided with a design mockup as a PDF-file and must replicate that design in HTML and CSS.",
-            "images" : [
-                "D:/Udacity/Front End ND/github/frontendND/Online_Resume/img/portfolio.jpg"
-            ]
-        }
-    ]
-};
-
-var education = {
-    "schools" : [
-        {
-            "name" : "Hongik University",
-            "location" : "Yeongi-gun, Chungcheongnam-do, South Korea",
-            "degree" : "Bachelor of Science",
-            "dates" : "Mar 01, 2006 - Feb 22, 2011",
-            "major" : "Computer & Information Communication Eng."
-        },
-        {
-            "name" : "King George International College",
-            "location" : "Toronto, ON",
-            "degree" : "Certificate and Diploma",
-            "dates" : "May 2014 - Feb 2015",
-            "major" : "English as a Second Language Program, Interpreting and Translation - Korean"
-        }
-    ],
-    "onlineCourses" : [
-        {
-            "title" : "Front-End Web Developer Nanodegree Program",
-            "school" : "Udacity",
-            "dates" : "Aug 2017 - Oct 2017",
-            "url" : "http://www.udacity.com"
-        },
-        {
-            "title" : "Full Stack Foundations Course",
-            "school" : "Udacity",
-            "dates" : "Aug 2017",
-            "url" : "http://www.udacity.com"
-        }
-    ]
-};
-
-bio.display = function() {
-    var formattedName = HTMLheaderName.replace("%data%", bio.name);
-    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-    $("#header").prepend(formattedRole).prepend(formattedName).append(formattedBioPic);
-
-    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    $("#topContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedLocation);
-    $("#footerContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedLocation);
-
-    var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#header").append(formattedWelcomeMsg);
-
-    $("#header").append(HTMLskillsStart);
-    for(skill in bio.skills) {
-        var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-        $("#skills").append(formattedSkill);
-    };
-};
-
-function inName(name) {
-    name = name.trim().split(" ");
-    console.log(name);
-    name[1] = name[1].toUpperCase();
-    name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-
-    return name[0] + " " + name[1];
-};
-
 work.display = function() {
     for (job in work.jobs) {
         $("#workExperience").append(HTMLworkStart);
@@ -144,6 +89,19 @@ work.display = function() {
     };
 };
 
+var projects = {
+    "projects" : [
+        {
+            "title" : "Build a Portfolio Site",
+            "dates" : "Sep 2017",
+            "description" : "▶ You will be provided with a design mockup as a PDF-file and must replicate that design in HTML and CSS.",
+            "images" : [
+                "D:/Udacity/Front End ND/github/frontendND/Online_Resume/img/portfolio.jpg"
+            ]
+        }
+    ]
+};
+
 projects.display = function() {
     for (project in projects.projects) {
         $("#projects").append(HTMLprojectStart);
@@ -158,6 +116,39 @@ projects.display = function() {
             $(".project-entry:last").append(formattedImage);
         };
     };
+};
+
+var education = {
+    "schools" : [
+        {
+            "name" : "Hongik University",
+            "location" : "Yeongi-gun, Chungcheongnam-do, South Korea",
+            "degree" : "Bachelor of Science",
+            "major" : "Computer & Information Communication Eng.",
+            "dates" : "Mar 01, 2006 - Feb 22, 2011"
+        },
+        {
+            "name" : "King George International College",
+            "location" : "Toronto, ON",
+            "degree" : "Certificate and Diploma",
+            "major" : "English as a Second Language Program, Interpreting and Translation - Korean",
+            "dates" : "May 2014 - Feb 2015"
+        }
+    ],
+    "onlineCourses" : [
+        {
+            "title" : "Front-End Web Developer Nanodegree Program",
+            "school" : "Udacity",
+            "dates" : "Aug 2017 - Oct 2017",
+            "url" : "http://www.udacity.com"
+        },
+        {
+            "title" : "Full Stack Foundations Course",
+            "school" : "Udacity",
+            "dates" : "Aug 2017",
+            "url" : "http://www.udacity.com"
+        }
+    ]
 };
 
 education.display = function() {
@@ -185,12 +176,21 @@ education.display = function() {
     };
 };
 
+//
+// function inName(name) {
+//     name = name.trim().split(" ");
+//     console.log(name);
+//     name[1] = name[1].toUpperCase();
+//     name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+//
+//     return name[0] + " " + name[1];
+// };
+//
 
 bio.display();
 work.display();
 projects.display();
 education.display();
 
-
-$("#main").append(internationalizeButton);
+// $("#main").append(internationalizeButton);
 $("#mapDiv").append(googleMap);
