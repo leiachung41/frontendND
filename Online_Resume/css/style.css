@@ -76,7 +76,14 @@ h5 {
   color: #999;
   line-height: 16px;
   float: right;
+}
 
+.url-text {
+  font-style: italic;
+  font-size: 16px;
+  color: #999;
+  line-height: 24px;
+  float: right;
 }
 
 p {

@@ -1,7 +1,7 @@
 var bio = {
     "name" : "Lea Chung",
     "role" : "Front-End Web Developer",
-    "biopic" : "file:///D:/Udacity/Front%20End%20ND/small%20quiz/P3L8/img/logo2.jpg",
+    "biopic" : "D:/Udacity/Front End ND/github/frontendND/Online_Resume/img/logo.jpg",
     "welcomeMessage" : "I'm the one!",
     "contacts" : {
         "mobile" : "416-876-9367",
@@ -25,6 +25,26 @@ var work = {
                 "▶ Served customers at cashier and made all kinds of sandwiches.",
                 "▶ Prepared and made soups & sandwiches, stacked goods, and cleaned the store."
             ]
+        },
+        {
+            "employer" : "Tim Hortons",
+            "title" : "Store Front Employee",
+            "location" : "Toronto, ON",
+            "dates" : "Sep 2015 - Dec 2015",
+            "description" : [
+                "▶ Served customers at cashier and made all kinds of beverages including coffee.",
+                "▶ Prepared and made soups & sandwiches, stacked goods, and cleaned the store."
+            ]
+        },
+        {
+            "employer" : "King George International College",
+            "title" : "Dormitory Coordinator",
+            "location" : "Toronto, ON",
+            "dates" : "Jul 2014 - Dec 2014",
+            "description" : [
+                "▶ Welcomed new students, arranged rooms and managed housing issues.",
+                "▶ Provided school and dormitory information and helped students to adapt school."
+            ]
         }
     ]
 };
@@ -36,7 +56,7 @@ var projects = {
             "dates" : "Sep 2017",
             "description" : "▶ You will be provided with a design mockup as a PDF-file and must replicate that design in HTML and CSS.",
             "images" : [
-                "file:///D:/Udacity/Front%20End%20ND/small%20quiz/P3L8/img/re_portfolio_1.jpg"
+                "D:/Udacity/Front End ND/github/frontendND/Online_Resume/img/portfolio.jpg"
             ]
         }
     ]
@@ -57,6 +77,12 @@ var education = {
             "title" : "Front-End Web Developer Nanodegree Program",
             "school" : "Udacity",
             "dates" : "Aug 2017 - Oct 2017",
+            "url" : "http://www.udacity.com"
+        },
+        {
+            "title" : "Full Stack Foundations Course",
+            "school" : "Udacity",
+            "dates" : "Aug 2017",
             "url" : "http://www.udacity.com"
         }
     ]
@@ -101,9 +127,10 @@ work.display = function() {
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
         var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+        var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
         var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
-        $(".work-entry:last").append(formattedEmployer + formattedTitle,formattedDates,formattedDescription);
+        $(".work-entry:last").append(formattedEmployer + formattedTitle,formattedDates,formattedLocation,formattedDescription);
     }
 }
 
@@ -143,7 +170,6 @@ education.display = function() {
             var formattedonlineschool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
             var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
             var formattedonlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
-
             $(".education-entry:last").append(formattedonlineTitle + formattedonlineschool,formattedonlineDates,formattedonlineURL);
         };
     };
