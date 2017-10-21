@@ -11,7 +11,7 @@ var bio = {
     "skills" : [
         "detail-oriented", "organized", "responsible"
     ],
-    "biopic" : "D:/Udacity/Front End ND/github/frontendND/Online_Resume/img/logo.jpg"
+    "biopic" : "img/logo.jpg"
 };
 
 bio.display = function() {
@@ -24,14 +24,13 @@ bio.display = function() {
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    $("#topContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedLocation);
-    $("#footerContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedLocation);
+    $("#topContacts,#footerContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedLocation);
 
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedWelcomeMsg);
 
     $("#header").append(HTMLskillsStart);
-    for(var skill in bio.skills) {
+    for(var skill=0; skill<bio.skills.length; skill++) {
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
         $("#skills").append(formattedSkill);
     }
@@ -73,7 +72,7 @@ var work = {
 };
 
 work.display = function() {
-    for (var job in work.jobs) {
+    for (var job=0; job<work.jobs.length; job++) {
         $("#workExperience").append(HTMLworkStart);
 
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -82,7 +81,7 @@ work.display = function() {
         var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
         $(".work-entry:last").append(formattedEmployer + formattedTitle,formattedDates,formattedLocation);
 
-        for(var description in work.jobs[job].description) {
+        for(var description=0; description<work.jobs[job].description.length; description++) {
             var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description[description]);
             $(".work-entry:last").append(formattedDescription);
         }
@@ -96,14 +95,14 @@ var projects = {
             "dates" : "Sep 2017",
             "description" : "▶ You will be provided with a design mockup as a PDF-file and must replicate that design in HTML and CSS.",
             "images" : [
-                "D:/Udacity/Front End ND/github/frontendND/Online_Resume/img/portfolio.jpg"
+                "img/portfolio.jpg"
             ]
         }
     ]
 };
 
 projects.display = function() {
-    for (var project in projects.projects) {
+    for (var project=0; project<projects.projects.length; project++) {
         $("#projects").append(HTMLprojectStart);
 
         var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
@@ -111,7 +110,7 @@ projects.display = function() {
         var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
         $(".project-entry:last").append(formattedTitle,formattedDates,formattedDescription);
 
-        for (var image in projects.projects[project].images) {
+        for (var image=0; image<projects.projects[project].images.length; image++) {
             var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
             $(".project-entry:last").append(formattedImage);
         }
@@ -124,14 +123,18 @@ var education = {
             "name" : "Hongik University",
             "location" : "Yeongi-gun, Chungcheongnam-do, South Korea",
             "degree" : "Bachelor of Science",
-            "major" : "Computer & Information Communication Eng.",
+            "majors" : [
+                "Computer & Information Communication Eng."
+            ],
             "dates" : "Mar 01, 2006 - Feb 22, 2011"
         },
         {
             "name" : "King George International College",
             "location" : "Toronto, ON",
             "degree" : "Certificate and Diploma",
-            "major" : "English as a Second Language Program, Interpreting and Translation - Korean",
+            "majors" : [
+                "English as a Second Language Program", "Interpreting and Translation - Korean"
+            ],
             "dates" : "May 2014 - Feb 2015"
         }
     ],
@@ -152,21 +155,25 @@ var education = {
 };
 
 education.display = function() {
-    for (var school in education.schools) {
+    for (var school=0; school<education.schools.length; school++) {
         $("#education").append(HTMLschoolStart);
 
         var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
         var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
         var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
         var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-        var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
-        $(".education-entry:last").append(formattedName + formattedDegree,formattedDates,formattedLocation,formattedMajor);
+        $(".education-entry:last").append(formattedName + formattedDegree,formattedDates,formattedLocation);
+
+        for(var major=0; major<education.schools[school].majors.length; major++) {
+           var formattedMajors = HTMLschoolMajors.replace("%data%", education.schools[school].majors[major]);
+           $(".education-entry:last").append(formattedMajors);
+        }
     }
 
     if(education.onlineCourses.length > 0){
         $(".education-entry:last").append(HTMLonlineClasses);
 
-        for (var course in education.onlineCourses) {
+        for (var course=0; course<education.onlineCourses.length; course++) {
             var formattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
             var formattedonlineschool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
             var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
@@ -176,21 +183,9 @@ education.display = function() {
     }
 };
 
-//
-// function inName(name) {
-//     name = name.trim().split(" ");
-//     console.log(name);
-//     name[1] = name[1].toUpperCase();
-//     name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-//
-//     return name[0] + " " + name[1];
-// };
-//
-
 bio.display();
 work.display();
 projects.display();
 education.display();
 
-// $("#main").append(internationalizeButton);
 $("#mapDiv").append(googleMap);
