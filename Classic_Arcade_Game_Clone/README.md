@@ -1,6 +1,5 @@
 # Classic Arcade Game Clone
-
-In this project I've built my own arcade game like Frogger Game.
+In this project, I've built my own arcade game like Frogger Game.
 
 ## Frogger Game Description
 In this game you have a Player and Enemies (Bugs). The goal of the player is to reach the water, without colliding into any one of the enemies.
@@ -31,11 +30,11 @@ I didn't build the game from scratch. I've provided the art assets and game engi
 Click on index.html and enjoy the app!
 
 ## How to play?
-- The player can move.:
-  - up: press the keyboard ↑
-  - down: press the keyboard ↓
-  - right: press the keyboard →
-  - left: press the keyboard ←
+- The player can move:
+  - Up: Press the keyboard ↑
+  - Down: Press the keyboard ↓
+  - Right: Press the keyboard →
+  - Left: Press the keyboard ←
 - The enemies move in varying speeds on the paved block portion of the scene.
 - Once the player collides with Enemies (Bugs), the game is reset and the player moves back to the start square.
 - Once the player reaches the water, the game is won.
