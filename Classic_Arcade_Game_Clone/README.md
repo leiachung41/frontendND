@@ -27,6 +27,9 @@ I didn't build the game from scratch. I've provided the art assets and game engi
 - Creating a new Player object.
 - Creating several new Enemies objects and placing them in an array called allEnemies.
 
+## How to run?
+Click on index.html and enjoy the app!
+
 ## How to play?
 - The player can move.:
   - up: press the keyboard ↑
@@ -36,4 +39,3 @@ I didn't build the game from scratch. I've provided the art assets and game engi
 - The enemies move in varying speeds on the paved block portion of the scene.
 - Once the player collides with Enemies (Bugs), the game is reset and the player moves back to the start square.
 - Once the player reaches the water, the game is won.
-

@@ -76,17 +76,17 @@ Player.prototype.handleInput = function(keyPress) {
     Left key should move the player to the left,
     right key to the right , up should move the player up
     and down should move the player down.*/
-    if (keyPress == 'left') {
-        player.x -= 100;
+    if (keyPress == 'left' && this.x > 0) {
+        this.x -= 100;
     }
-    if (keyPress == 'up') {
-        player.y -= 25;
+    if (keyPress == 'up' && this.y > 0) {
+        this.y -= 90;
     }
-    if (keyPress == 'right') {
-        player.x += 100;
+    if (keyPress == 'right' && this.x < 400) {
+        this.x += 100;
     }
-    if (keyPress == 'down') {
-        player.y += 25;
+    if (keyPress == 'down' && this.y < 400) {
+        this.y += 90;
     }
     console.log('keyPress is: ' + keyPress);
     /* Recall that the player cannot move off screen. */
