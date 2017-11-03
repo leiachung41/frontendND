@@ -1,20 +1,39 @@
 # Classic Arcade Game Clone
 
-In this project I've built my own arcade game alike Frogger Game.
+In this project I've built my own arcade game like Frogger Game.
 
 ## Frogger Game Description
-In this game you have a Player and Enemies (Bugs). The goal of the player is to reach the water, without colliding into any one of the enemies
+In this game you have a Player and Enemies (Bugs). The goal of the player is to reach the water, without colliding into any one of the enemies.
 
 ## How to build?
-I didn't build the game from scratch. I am provided the art assets and game engine
+I didn't build the game from scratch. I've provided the art assets and game engine
 [here](https://github.com/udacity/frontend-nanodegree-arcade-game).
 
+## What I build?
+- The Enemy function:
+  - Setting the Enemy initial location.
+  - Setting the Enemy speed.
+- The update method for the Enemy:
+  - Updates the Enemy location.
+  - Handles collision with the Player.
+- The Player function:
+  - Setting the Player initial location.
+- The update method for the Player.
+- The render method for the Player.
+- The handleInput method, which should receive user input, allowedKeys (the key which was pressed) and move the player according to that input. In particular:
+  - Left key should move the player to the left, right key to the right, up should move the player up and down should move the player down.
+  - Recall that the player cannot move off screen (so you will need to check for that and handle appropriately).
+  - If the player reaches the water the game should be reset by moving the player back to the initial location (you can write a separate reset Player method to handle that).
+- Creating a new Player object.
+- Creating several new Enemies objects and placing them in an array called allEnemies.
+
 ## How to play?
-1. You can move like.
-- up: press the keyboard ↑
-- down: press the keyboard ↓
-- right: press the keyboard →
-- left: press the keyboard ←
-2. If you collides with Enemies (Bugs), you lost. And then, the game is reset.
-3. If you reaches the water, the game is won.
+- The player can move.:
+  - up: press the keyboard ↑
+  - down: press the keyboard ↓
+  - right: press the keyboard →
+  - left: press the keyboard ←
+- The enemies move in varying speeds on the paved block portion of the scene.
+- Once the player collides with Enemies (Bugs), the game is reset and the player moves back to the start square.
+- Once the player reaches the water, the game is won.
 
