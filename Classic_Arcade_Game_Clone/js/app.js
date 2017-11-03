@@ -1,3 +1,4 @@
+// **************************************** The Enemy *****
 // Enemies our player must avoid
 var Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
@@ -44,6 +45,8 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+
+// **************************************** The Player *****
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
@@ -58,24 +61,28 @@ var Player = function(x, y, speed) {
     this.speed = speed;
 };
 
+/* The update method for the Player. */
 Player.prototype.update = function(dt) {
     /* Similar to the one for the Enemy. */
-
     if (this.y >= 605) { /* canvas.height = 606 */
         this.reset();
     }
 };
+
+/* The render method for the Player. */
 Player.prototype.render = function() {
     /* Use the code from the rener method for the Enemy. */
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
+
+/* The handleInput method, which should receive
+user input, allowedKeys (the key which was pressed)
+and move the player according to that input. */
 Player.prototype.handleInput = function(keyPress) {
-    /* Should receive user input, allowedkeys
-    (the key which was pressed) and the move the player
-    according to that input.
-    Left key should move the player to the left,
+    /* Left key should move the player to the left,
     right key to the right , up should move the player up
     and down should move the player down.*/
+    /* Recall that the player cannot move off screen. */
     if (keyPress == 'left' && this.x > 0) {
         this.x -= 100;
     }
@@ -89,7 +96,6 @@ Player.prototype.handleInput = function(keyPress) {
         this.y += 90;
     }
     console.log('keyPress is: ' + keyPress);
-    /* Recall that the player cannot move off screen. */
 
     /* If the player reaches the water, the game should be reset
     by moving the player back to the initial location. */
@@ -103,6 +109,7 @@ Player.prototype.reset = function() {
     this.x = 200;
     this.y = 400;
 };
+
 
 
 // Now instantiate your objects.
