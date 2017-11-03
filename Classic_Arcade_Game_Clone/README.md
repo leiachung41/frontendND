@@ -1,6 +1,6 @@
 # Classic Arcade Game Clone
 
-In this project I've built my own arcade game like Frogger Game.
+In this project, I've built my own arcade game like Frogger Game.
 
 ## Frogger Game Description
 In this game you have a Player and Enemies (Bugs). The goal of the player is to reach the water, without colliding into any one of the enemies.
