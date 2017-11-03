@@ -25,14 +25,14 @@ Enemy.prototype.update = function(dt) {
     Handles collision with the Player. */
     this.x += this.speed * dt;
 
-    if (this.x >= 505) { //canvas.width = 505
+    if (this.x >= 505) { /* canvas.width = 505 */
         this.x = 0;
         this.speed = Math.floor((Math.random() * 100) + 50);
     }
 
-    // handling collision with the enemies
-    if( player.x >= this.x -40 && player.x <=this.x + 40 ){
-        if( player.y >= this.y -40 && player.y <=  this.y+40 ){
+    /* Handling collision with the enemies. */
+    if( player.x >= this.x -50 && player.x <=this.x + 50 ){
+        if( player.y >= this.y -50 && player.y <=  this.y+50 ){
             player.x = 200;
             player.y = 400;
         }
@@ -48,51 +48,61 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 var Player = function(x, y, speed) {
-    /* Setting the Player initial location. */
-    this.x = x;
-    this.y = y;
-    this.speed = speed;
-
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/char-cat-girl.png';
+
+    /* Setting the Player initial location. */
+    this.x = 200;
+    this.y = 400;
+    this.speed = speed;
 };
 
 Player.prototype.update = function(dt) {
-    /* similar to the one for the Enemy. */
-    this.y += this.speed * dt;
+    /* Similar to the one for the Enemy. */
 
-    if (this.y >= 606) { //canvas.width = 505
-        this.y = 0;
-        this.speed = Math.floor((Math.random() * 100) + 50);
+    if (this.y >= 605) { /* canvas.height = 606 */
+        this.reset();
     }
 };
 Player.prototype.render = function() {
-    /* use the code from the rener method for the Enemy. */
+    /* Use the code from the rener method for the Enemy. */
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
-Player.prototype.handleInput = function(allowedkeys) {
-    /* should receive user input, allowedkeys
+Player.prototype.handleInput = function(keyPress) {
+    /* Should receive user input, allowedkeys
     (the key which was pressed) and the move the player
     according to that input.
     Left key should move the player to the left,
     right key to the right , up should move the player up
-    and down should move the player down.
-    Recall that the player cannot move off screen.
-    If the player reaches the water, the game should be reset
-    by moving the player back to the initial location.
-    */
-    if (37 in allowedkeys) { //move left
-        player.x -= player.speed;
-    } if (38 in allowedkeys) { //move up
-        player.y -= player.speed;
-    } if (39 in allowedkeys) { //move right
-        player.x += player.speed;
-    } if (40 in allowedkeys) { //move down
-        player.y += player.speed;
+    and down should move the player down.*/
+    if (keyPress == 'left') {
+        player.x -= 100;
+    }
+    if (keyPress == 'up') {
+        player.y -= 25;
+    }
+    if (keyPress == 'right') {
+        player.x += 100;
+    }
+    if (keyPress == 'down') {
+        player.y += 25;
+    }
+    console.log('keyPress is: ' + keyPress);
+    /* Recall that the player cannot move off screen. */
+
+    /* If the player reaches the water, the game should be reset
+    by moving the player back to the initial location. */
+    if (this.y < 0) {
+        this.reset();
     }
 };
 
+/* Reset player to beginning position */
+Player.prototype.reset = function() {
+    this.x = 200;
+    this.y = 400;
+};
 
 
 // Now instantiate your objects.
