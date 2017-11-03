@@ -31,7 +31,7 @@ I didn't build the game from scratch. I've provided the art assets and game engi
 Click on index.html and enjoy the app!
 
 ## How to play?
-- The player can move.:
+- The player can move:
   - up: press the keyboard ↑
   - down: press the keyboard ↓
   - right: press the keyboard →
