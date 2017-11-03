@@ -7,7 +7,7 @@ In this game you have a Player and Enemies (Bugs). The goal of the player is to 
 
 ## How to build?
 I didn't build the game from scratch. I've provided the art assets and game engine
-[here](https://github.com/udacity/frontend-nanodegree-arcade-game).
+[here](https://github.com/udacity/frontend-nanodegree-arcade-game). I've edited app.js file to build the game.
 
 ## What I build?
 - The Enemy function:
