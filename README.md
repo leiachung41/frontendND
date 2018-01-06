@@ -7,7 +7,7 @@ Udacity: Front-End Web Developer Nanodegree Program
 : Put your HTML skills to use by converting a designer's mockup of a blog article into a real webpage!
 
 
-2. **[Animal Trading Cards](https://github.com/leachung41/frontendND/tree/master/Animal_Trading_Cards)** 
+2. **[Animal Trading Cards](https://leachung41.github.io/frontendND/Animal_Trading_Cards/card.html)** 
 : Use your knowledge of HTML and CSS to create a web-based trading card depicting your favorite animal
 
 3. **[Build a Portfolio Site](https://github.com/leachung41/frontendND/tree/master/Build_a_Portfolio_Site)**
